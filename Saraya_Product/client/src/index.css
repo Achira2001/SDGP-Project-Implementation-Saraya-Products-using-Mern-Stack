@@ -12,18 +12,31 @@ code {
     monospace;
 }
 
-.navbar{
+.navbar {
   background-color: black !important;
 }
 
-.nav-link{
+.nav-link {
   color: white !important;
 }
 
-.navbar-brand{
+.navbar-brand {
   color:white !important 
 }
 
-.navbar-nav{
+.navbar-nav {
   margin-left: auto !important;
+}
+
+.nav-font {
+  font-family: ;
+}
+
+.noto-serif-sinhala .nav-font {
+  font-family: "Noto Serif Sinhala", serif;
+  font-size: 50px;
+  font-optical-sizing: auto;
+  font-weight: 00;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
