@@ -1,15 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter
 import './App.css';
-import Navbar from './components/Navbar';
-import Admin from './screens/Signup/Admin';
-
+import Navbar from './components/Navbar.js';
+import Home from './screens/Home.js';
+import Admin from './screens/Signup/Admin.js';
+import Lorry from './screens/Signup/Lorry.js';
+import Rider from './screens/Signup/Rider.js';
+import Stores from './screens/Signup/Stores.js';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-
-    </div>
+    <Router> 
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/lorry" element={<Lorry />} />
+          <Route path="/rider" element={<Rider />} />
+          <Route path="/stores" element={<Stores />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
