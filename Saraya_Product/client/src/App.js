@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter
 import './App.css';
 import Navbar from './components/Navbar.js';
+import Footer from './components/Footer.js';
 import Home from './screens/Home.js';
 import Admin from './screens/Signup/Admin.js';
 import Lorry from './screens/Signup/Lorry.js';
@@ -21,7 +22,9 @@ function App() {
           <Route path="/stores" element={<Stores />} />
         </Routes>
       </div>
+      <Footer/>
     </Router>
+    
   );
 }
 
