@@ -175,3 +175,38 @@ h1{
   height: 400px;
   border-radius: 5px !important;
 }
+
+
+
+/*Itemcard*/
+
+/* Style for dropdown button */
+.custom-dropdown-toggle {
+  background-color: #f8f9fa;
+  color: #495057;
+  border-color: #ced4da;
+}
+
+/* Style for dropdown menu */
+.custom-dropdown-menu {
+  background-color: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Style for dropdown items */
+.custom-dropdown-item {
+  color: #212529;
+}
+
+/* Style for selected dropdown item */
+.custom-dropdown-item.active,
+.custom-dropdown-item:active {
+  color: #fff;
+  background-color: #007bff;
+}
+
+/* Style for dropdown items on hover */
+.custom-dropdown-item:hover {
+  color: #fff;
+  background-color: #007bff;
+}
