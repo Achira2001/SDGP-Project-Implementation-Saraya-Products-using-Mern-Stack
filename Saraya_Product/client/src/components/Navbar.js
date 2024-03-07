@@ -5,9 +5,9 @@ import logo from '../images/logo/Logo.png';
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-primary">
-      <a className="navbar-brand" href="/">
+      <Link className="navbar-brand" to="/">
         <img src={logo} alt="Saraya Product Logo" style={{ width: 'auto', height: '100px' }} /> 
-      </a>
+      </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -17,12 +17,12 @@ function Navbar() {
             <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Sign In</a>
+            <Link className="nav-link" to="/signin">Sign In</Link>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Sign Up
-            </a>
+            </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <Link className="dropdown-item" to="/admin">Admin</Link>
               <Link className="dropdown-item" to="/rider">Rider</Link>
@@ -31,7 +31,7 @@ function Navbar() {
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">About Us</a>
+            <Link className="nav-link" to="#">About Us</Link>
           </li>
         </ul>
       </div>

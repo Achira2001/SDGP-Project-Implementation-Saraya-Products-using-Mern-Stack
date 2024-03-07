@@ -13,7 +13,7 @@ const data = {
             img:img1,
             title:'Curry Powder',
             desc:'',
-            price:75,
+            price:5,
         },
         {
             id:2,

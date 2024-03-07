@@ -35,23 +35,21 @@ function Footer() {
                             <h5 className="text-uppercase mb-4">Spices</h5>
                             <ul className="list-unstyled">
                                 <li className="mb-2">
-                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Turmeric</a>
+                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Curry Powder</a>
                                 </li>
                                 <li className="mb-2">
-                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Ginger</a>
+                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Chilli Powder</a>
                                 </li>
                                 <li className="mb-2">
-                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Garlic</a>
+                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Chilli Pieces</a>
                                 </li>
                                 <li className="mb-2">
-                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Black Pepper</a>
+                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Tumeric Powder</a>
                                 </li>
                                 <li className="mb-2">
-                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Cloves</a>
+                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Peppar Powder</a>
                                 </li>
-                                <li className="mb-2">
-                                    <a href="#!" className="text-white"><i className="fas fa-paw pe-3"></i>Cinnamon</a>
-                                </li>
+                                
                             </ul>
                         </div>
                         <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
