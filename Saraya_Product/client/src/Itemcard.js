@@ -1,3 +1,5 @@
+// ItemCard.js
+
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart';
 
@@ -6,14 +8,40 @@ const ItemCard = (props) => {
   const [selectedSize, setSelectedSize] = useState('50g');
 
   const prices = {
-    '50g': 75,
-    '100g': 140,
-    '500g': 650,
-    '1kg': 1200
+    'Curry Powder': {
+      '50g': 5,
+      '100g': 10,
+      '500g': 50,
+      '1kg': 100
+    },
+    'Chilli Powder': {
+      '50g': 80,   // Updated price for Chilli Powder
+      '100g': 130, // Updated price for Chilli Powder
+      '500g': 300, // Updated price for Chilli Powder
+      '1kg': 700   // Updated price for Chilli Powder
+    },
+    'Chilli Pieces': {
+      '50g': 90,
+      '100g': 180,
+      '500g': 400,
+      '1kg': 800
+    },
+    'Tumeric Powder': {
+      '50g': 75,
+      '100g': 140,
+      '500g': 650,
+      '1kg': 1200
+    },
+    'Peppar Powder': {
+      '50g': 85,
+      '100g': 160,
+      '500g': 750,
+      '1kg': 1400
+    }
   };
 
   const handleAddToCart = () => {
-    const price = prices[selectedSize];
+    const price = prices[props.title][selectedSize]; // Get the price based on product title and selected size
     addItem({
       ...props.item,
       size: selectedSize,
@@ -70,7 +98,7 @@ const ItemCard = (props) => {
               </button>
             </div>
           </div>
-          <h5 className="card-title">Rs. {prices[selectedSize]}</h5>
+          <h5 className="card-title">Rs. {prices[props.title][selectedSize]}</h5>
           <p className="card-text">{props.desc}</p>
           <button className="btn btn-success" onClick={handleAddToCart}>
             Add to Cart

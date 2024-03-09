@@ -16,22 +16,37 @@ const Cart = () => {
 
   const generatePDF = () => {
     const doc = new jsPDF();
+
+    // Set up formatting
+    const margin = 10;
+    const lineHeight = 10;
+    const maxWidth = doc.internal.pageSize.getWidth() - 2 * margin;
+
+    // Add header
+    doc.setFontSize(18);
+    doc.text('Receipt', margin, margin);
+
+    // Add date
     const date = new Date();
     const dateString = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+    doc.setFontSize(12);
+    doc.text(`Date: ${dateString}`, margin, margin + lineHeight);
 
-    doc.text('Receipt', 20, 20);
-    doc.text(`Date: ${dateString}`, 20, 30);
-
-    if (items.length === 0) {
-      doc.text('No items in cart.', 20, 40);
-      return; // Early return to avoid errors if cart is empty
-    }
-
+    // Add items
+    doc.setFontSize(12);
+    let yPosition = margin + 3 * lineHeight;
     items.forEach((item, index) => {
       const { title, price, size, quantity } = item;
-      doc.text(`${title} - Rs. ${price} x ${quantity} (${size})`, 20, 40 + (10 * index));
+      const itemText = `${title} - Rs. ${price} x ${quantity} (${size})`;
+      const lines = doc.splitTextToSize(itemText, maxWidth);
+      doc.text(lines, margin, yPosition);
+      yPosition += (lines.length + 0.5) * lineHeight;
     });
-    doc.text(`Total: Rs. ${cartTotal}`, 20, 40 + (10 * items.length));
+
+    // Add total
+    doc.setFontSize(14);
+    const totalText = `Total: Rs. ${cartTotal}`;
+    doc.text(totalText, margin, yPosition + lineHeight);
 
     // Save the PDF
     doc.save('receipt.pdf');
