@@ -9,34 +9,34 @@ const ItemCard = (props) => {
 
   const prices = {
     'Curry Powder': {
-      '50g': 5,
-      '100g': 10,
-      '500g': 50,
-      '1kg': 100
+      '50g': 75,
+      '100g': 150,
+      '500g': 650,
+      '1kg': 1200
     },
     'Chilli Powder': {
-      '50g': 80,   // Updated price for Chilli Powder
-      '100g': 130, // Updated price for Chilli Powder
-      '500g': 300, // Updated price for Chilli Powder
-      '1kg': 700   // Updated price for Chilli Powder
+      '50g': 90,   
+      '100g': 180, 
+      '500g': 700, 
+      '1kg': 1250  
     },
     'Chilli Pieces': {
       '50g': 90,
       '100g': 180,
-      '500g': 400,
-      '1kg': 800
+      '500g': 700,
+      '1kg': 1250
     },
     'Tumeric Powder': {
-      '50g': 75,
-      '100g': 140,
-      '500g': 650,
-      '1kg': 1200
+      '50g': 150,
+      '100g': 250,
+      '500g': 1200,
+      '1kg': 1900
     },
     'Peppar Powder': {
-      '50g': 85,
-      '100g': 160,
-      '500g': 750,
-      '1kg': 1400
+      '50g': 170,
+      '100g': 330,
+      '500g': 1350,
+      '1kg': 2500
     }
   };
 
