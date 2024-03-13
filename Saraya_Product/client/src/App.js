@@ -1,24 +1,29 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './screens/Home';
+import Signin from './screens/Signin';
 import Cart from './screens/Cart';
 import { CartProvider } from 'react-use-cart';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Router>
+    <Router>
+      <div>
         <Navbar />
         <CartProvider>
-          <Home />
-          <Cart />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/cart" element={<Cart />} />
+            {/* Add more routes as needed */}
+          </Routes>
         </CartProvider>
         <Footer />
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

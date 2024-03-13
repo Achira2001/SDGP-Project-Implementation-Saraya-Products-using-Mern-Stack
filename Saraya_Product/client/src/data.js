@@ -13,7 +13,7 @@ const data = {
             img:img1,
             title:'Curry Powder',
             desc:'',
-            price:5,
+            price:75,
         },
         {
             id:2,
@@ -34,14 +34,14 @@ const data = {
             img:img4,
             title:'Tumeric Powder',
             desc:'',
-            price:75,
+            price:150,
         },
         {
             id:5,
             img:img5,
             title:'Peppar Powder',
             desc:'',
-            price:85,
+            price:170,
         }
     ],
         

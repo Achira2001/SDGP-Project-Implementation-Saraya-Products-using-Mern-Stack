@@ -2,6 +2,7 @@ import React from 'react';
 import { useCart } from 'react-use-cart';
 import { jsPDF } from 'jspdf';
 
+
 const Cart = () => {
   const {
     isEmpty,

@@ -5,7 +5,7 @@ import logo from '../images/logo/Logo.png';
 function Footer() {
     return (
         <div className="container my-5">
-            <footer className="bg-primary text-center text-lg-start text-white">
+            <footer className="bg-black text-center text-lg-start text-white">
                 <div className="container p-4">
                     <div className="row my-4">
                         <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -85,7 +85,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
+                <div className="bg-primary text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
                     © 2024 : Saraya Product
                 </div>
             </footer>
