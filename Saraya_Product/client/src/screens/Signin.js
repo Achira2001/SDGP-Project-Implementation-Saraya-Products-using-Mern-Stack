@@ -26,18 +26,18 @@ const Signin = () => {
   };
 
   return (
-    <div className="main"> 
+    <div className="main">
       <div className="Form-box">
         {isSignin ? (
           <form className="Login-form" onSubmit={handleSubmit}>
             <h1>Signin</h1>
             <div className="input-box">
-              <input type="text" value={email} onChange={(e) => handleInputChange(e, setEmail)} required />
-              <label>Email</label>
+              <label htmlFor="signin-email">Email</label>
+              <input type="email" id="signin-email" value={email} onChange={(e) => handleInputChange(e, setEmail)} required />
             </div>
             <div className="input-box">
-              <input type="password" value={password} onChange={(e) => handleInputChange(e, setPassword)} required />
-              <label>Password</label>
+              <label htmlFor="signin-password">Password</label>
+              <input type="password" id="signin-password" value={password} onChange={(e) => handleInputChange(e, setPassword)} required />
             </div>
             <button type="submit" className="submit-btn">Signin</button>
             <h5 className="switch-btn" onClick={() => setIsSignin(false)}>Don't have an account? Register</h5>
@@ -46,16 +46,16 @@ const Signin = () => {
           <form className="Register-form" onSubmit={handleSubmit}>
             <h1>Register</h1>
             <div className="input-box">
-              <input type="text" value={username} onChange={(e) => handleInputChange(e, setUsername)} required />
-              <label>Username</label>
+              <label htmlFor="register-username">Username</label>
+              <input type="text" id="register-username" value={username} onChange={(e) => handleInputChange(e, setUsername)} required />
             </div>
             <div className="input-box">
-              <input type="text" value={email} onChange={(e) => handleInputChange(e, setEmail)} required />
-              <label>Email</label>
+              <label htmlFor="register-email">Email</label>
+              <input type="email" id="register-email" value={email} onChange={(e) => handleInputChange(e, setEmail)} required />
             </div>
             <div className="input-box">
-              <input type="password" value={password} onChange={(e) => handleInputChange(e, setPassword)} required />
-              <label>Password</label>
+              <label htmlFor="register-password">Password</label>
+              <input type="password" id="register-password" value={password} onChange={(e) => handleInputChange(e, setPassword)} required />
             </div>
             <button type="submit" className="submit-btn">Register</button>
             <h5 className="switch-btn" onClick={() => setIsSignin(true)}>Already have an account? Signin</h5>

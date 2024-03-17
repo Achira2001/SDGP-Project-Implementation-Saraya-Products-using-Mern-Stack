@@ -1,9 +1,7 @@
-// ItemCard.js
-
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart';
 
-const ItemCard = (props) => {
+const Itemcard = (props) => {
   const { addItem } = useCart();
   const [selectedSize, setSelectedSize] = useState('50g');
 
@@ -109,4 +107,4 @@ const ItemCard = (props) => {
   );
 };
 
-export default ItemCard;
+export default Itemcard;

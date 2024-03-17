@@ -1,7 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import { useCart } from 'react-use-cart';
 import { jsPDF } from 'jspdf';
-
+import Itemcard from "../Itemcard";
+import data from "../data";
+import './Cart.css';
 
 const Cart = () => {
   const {
@@ -14,6 +17,20 @@ const Cart = () => {
     removeItem,
     emptyCart,
   } = useCart();
+
+  const sendProductData = async (item) => {
+    try {
+      const response = await axios.post('/products', {
+        img: item.img,
+        title: item.title,
+        desc: item.desc,
+        price: item.price
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   const generatePDF = () => {
     const doc = new jsPDF();
@@ -56,61 +73,79 @@ const Cart = () => {
     emptyCart();
   };
 
-  if (isEmpty) return <h1 className="text-center">Your Cart is Empty</h1>;
-
   return (
-    <section className="py-4 container">
-      <div className="row justify-content-center">
-        <div className="col-12">
-          <h5>
-            Cart ({totalUniqueItems}) Total Items: ({totalItems})
-          </h5>
-          <table className="table table-light table-hover m-0">
-            <tbody>
-              {items.map((item, index) => (
-                <tr key={index}>
-                  <td>
-                    <img src={item.img} style={{ height: '6rem' }} alt={item.title} />
-                  </td>
-                  <td>{item.title} ({item.size})</td>
-                  <td>Rs. {item.price}</td>
-                  <td>Quantity: {item.quantity}</td>
-                  <td>
-                    <button
-                      className="btn btn-info ms-2"
-                      onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-                      disabled={item.quantity === 1} // Disable button if quantity is 1
-                    >
-                      -
-                    </button>
-                    <button
-                      className="btn btn-info ms-2"
-                      onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-                    >
-                      +
-                    </button>
-                    <button className="btn btn-danger ms-2" onClick={() => removeItem(item.id)}>
-                      Remove Item
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <div>
+      <h1 className="text-center mt-3" style={{ color: 'white' }}>All Items</h1>
+
+      <section className="py-4 container">
+        <div className="row justify-content-center">
+          {data.productData.map((item, index) => (
+            <Itemcard
+              img={item.img}
+              title={item.title}
+              desc={item.desc}
+              price={item.price}
+              item={item}
+              key={index}
+              sendProductData={() => sendProductData(item)}
+            />
+          ))}
         </div>
-        <div className="col-auto ms-auto">
-          <h2>Total Price: Rs. {cartTotal}</h2>
+      </section>
+
+      <section className="py-4 container">
+        <div className="row justify-content-center">
+          <div className="col-12">
+            <h5>
+              Cart ({totalUniqueItems}) Total Items: ({totalItems})
+            </h5>
+            <table className="table table-light table-hover m-0">
+              <tbody>
+                {items.map((item, index) => (
+                  <tr key={index}>
+                    <td>
+                      <img src={item.img} style={{ height: '6rem' }} alt={item.title} />
+                    </td>
+                    <td>{item.title} ({item.size})</td>
+                    <td>Rs. {item.price}</td>
+                    <td>Quantity: {item.quantity}</td>
+                    <td>
+                      <button
+                        className="btn btn-info ms-2"
+                        onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+                        disabled={item.quantity === 1} // Disable button if quantity is 1
+                      >
+                        -
+                      </button>
+                      <button
+                        className="btn btn-info ms-2"
+                        onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+                      >
+                        +
+                      </button>
+                      <button className="btn btn-danger ms-2" onClick={() => removeItem(item.id)}>
+                        Remove Item
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="col-auto ms-auto">
+            <h2>Total Price: Rs. {cartTotal}</h2>
+          </div>
+          <div className="col-auto">
+            <button className="btn btn-danger m-2" onClick={() => emptyCart()}>
+              Clear Cart
+            </button>
+            <button className="btn btn-primary ms-2" onClick={generatePDF}>
+              Buy Now
+            </button>
+          </div>
         </div>
-        <div className="col-auto">
-          <button className="btn btn-danger m-2" onClick={() => emptyCart()}>
-            Clear Cart
-          </button>
-          <button className="btn btn-primary ms-2" onClick={generatePDF}>
-            Buy Now
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

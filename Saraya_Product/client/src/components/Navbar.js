@@ -19,20 +19,16 @@ function Navbar() {
           <li className="nav-item">
             <Link className="nav-link" to="/signin">Sign In</Link>
           </li>
-          <li className="nav-item dropdown">
-            <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sign Up
-            </Link>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <Link className="dropdown-item" to="/admin">Admin</Link>
-              <Link className="dropdown-item" to="/rider">Rider</Link>
-              <Link className="dropdown-item" to="/lorry">Lorry</Link>
-              <Link className="dropdown-item" to="/stores">Stores</Link>
-            </div>
+          <li className="nav-item">
+            <Link className="nav-link" to="/signup">Sign Up</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/cart">Cart</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/aboutus">About Us</Link>
           </li>
+          
         </ul>
       </div>
     </nav>
