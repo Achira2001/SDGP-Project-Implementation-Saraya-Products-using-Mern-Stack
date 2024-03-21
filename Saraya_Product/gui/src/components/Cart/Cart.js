@@ -35,7 +35,7 @@ const Cart = () => {
     const margin = 12;
     const upperMargin = 30;
     const upperMargin1 = 270;
-    const upperMargin2 = 65;
+    const upperMargin2 = 63;
     const lineHeight = 12;
     const rightMargin = 110;
     const maxWidth = doc.internal.pageSize.getWidth() - 2 * margin;
@@ -118,7 +118,7 @@ items.forEach((item, index) => {
 
     // Add total
     doc.setFontSize(16);
-    const totalText = `Total Amount : Rs.     ${cartTotal}`;
+    const totalText = `Total Amount : Rs. ${cartTotal}`;
     doc.text(totalText, margin, yPosition + lineHeight);
 
     // Save the PDF
