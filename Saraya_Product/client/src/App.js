@@ -4,12 +4,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './screens/Home';
 import Cart from './screens/Cart';
-import Signin from './screens/Signin'; // Import the Signin component
-import Signup from './screens/Signup'; // Import the Signup component
-
+import Signin from './screens/Signin'; 
+import Signup from './screens/Signup'; 
+import Aboutus from './screens/Aboutus';
 import { CartProvider } from 'react-use-cart';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter, Route, Routes
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
 function App() {
   return (
@@ -22,6 +21,7 @@ function App() {
             <Route path="/cart" element={<Cart />} /> {/* Cart component */}
             <Route path="/signin" element={<Signin />} /> {/* Signin component */}
             <Route path="/signup" element={<Signup />} /> {/* Signup component */}
+            <Route path="/aboutus" element={<Aboutus />} /> {/* Signup component */}
           </Routes>
         </CartProvider>
         <Footer />

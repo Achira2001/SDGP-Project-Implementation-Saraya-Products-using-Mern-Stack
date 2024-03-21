@@ -48,7 +48,7 @@ const Signup = () => {
     <div className="main">
       <div className="Form-box">
         <form onSubmit={handleSubmit}>
-          <h1>Register</h1>
+          <h1>Signup</h1>
           <div className="input-box">
             <select className="form-control" value={title} onChange={(e) => handleInputChange(e, setTitle)}>
               <option>Choose...</option>
