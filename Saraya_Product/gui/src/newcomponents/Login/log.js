@@ -11,6 +11,7 @@ const Profile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
+      from: "emplooyee",
       email: email,
       password: password,
     };
@@ -22,7 +23,7 @@ const Profile = () => {
         setEmail(" ");
         setPassword("");
         localStorage.setItem("ridertoken", response.data.data);
-        alert(response.data.message);
+        localStorage.setItem("riderId", response.data.id);
         window.location = "/rider";
       })
       .catch((error) => {

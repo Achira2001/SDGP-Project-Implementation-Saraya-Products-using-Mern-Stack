@@ -13,6 +13,7 @@ const Profile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
+      from: "user",
       email: email,
       password: password,
     };
@@ -21,9 +22,10 @@ const Profile = () => {
       .post("http://localhost:5000/auth", payload)
       .then((response) => {
         console.log("Login successful:", response.data);
-        setEmail(" ");
+        setEmail("");
         setPassword("");
         localStorage.setItem("usertoken", response.data.data);
+        localStorage.setItem("userId", response.data.id);
         alert(response.data.message);
         window.location = "/cart";
       })
@@ -32,6 +34,7 @@ const Profile = () => {
         alert(error.response.data.message);
       });
   };
+
   return (
     <div>
       <TheNav />
@@ -51,6 +54,8 @@ const Profile = () => {
               className="form-control"
               id="inputEmail3"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} // Update email state
             />
           </div>
 
@@ -63,6 +68,8 @@ const Profile = () => {
               className="form-control"
               id="inputPassword3"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} // Update password state
             />
           </div>
 
@@ -74,17 +81,11 @@ const Profile = () => {
             </label>
           </div>
 
-          <RouterLink
-            to="/cart"
-            spy={true}
-            smooth={true}
-            offset={-50}
-            duration={500}
-          >
-            <button type="button" className="btn btn-login">
-              Log in
-            </button>
-          </RouterLink>
+          <button type="submit" className="btn btn-login">
+            {" "}
+            {/* Change type to submit */}
+            Log in
+          </button>
 
           <button type="button" className="btn btn-google">
             Sign in with Google
