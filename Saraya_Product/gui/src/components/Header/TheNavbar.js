@@ -65,18 +65,7 @@ const TheNavbar = (props) => {
                 Why choose us
               </Link>
             </Nav.Link>
-            <Nav.Link className={`${classes.nav__link} me-4`}>
-              <Link
-                activeClass={classes.active}
-                to="dishes"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={500}
-              >
-                Our Products
-              </Link>
-            </Nav.Link>
+
             <Nav.Link className={`${classes.nav__link} me-4`}>
               <Link
                 activeClass={classes.active}

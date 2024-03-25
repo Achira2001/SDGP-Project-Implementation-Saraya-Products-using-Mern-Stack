@@ -42,12 +42,13 @@ const Footer = () => {
                   &copy;2024 Made with <i className="bi bi-heart-fill"></i>{" "}
                   by&nbsp;
                   <a
-                    href="https://lk.linkedin.com/in/sandin-kodagoda-344440199"
+                    href="https://github.com/Achira2001/SDGP-Project-Implementation.git"
                     target="_blank"
                     rel="noreferrer"
                     className={classes.eniola_codes}
                   >
                     SandinKodagoda
+                    Achira Amarasena
                   </a>
                 </p>
               </div>
@@ -112,7 +113,7 @@ const Footer = () => {
             <div className={classes.social}>
               <h3>Social</h3>
               <a
-                href="https://www.instagram.com/code_redex/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -125,7 +126,7 @@ const Footer = () => {
                 </p>
               </a>
               <a
-                href="https://mobile.twitter.com/EniolaCodes/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -138,7 +139,7 @@ const Footer = () => {
                 </p>
               </a>
               <a
-                href="https://www.linkedin.com/in/eni-ola/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -156,12 +157,14 @@ const Footer = () => {
           <p className={classes.mobile_copy}>
             &copy;2024 Made with <i className="bi bi-heart-fill"></i> by&nbsp;
             <a
-              href="https://lk.linkedin.com/in/sandin-kodagoda-344440199"
+              href="#"
               target="_blank"
               rel="noreferrer"
               className={classes.eniola_codes}
             >
               SandinKodagoda
+              <br/>
+              Achira
             </a>
           </p>
         </Row>
