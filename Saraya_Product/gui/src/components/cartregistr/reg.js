@@ -386,7 +386,7 @@ export default function Profile() {
               <div className="form-group row">
                 <div className="col-sm-10">
                   <button type="submit" className="btn btn-primary">
-                    Sign in
+                    Register
                   </button>
                 </div>
               </div>
