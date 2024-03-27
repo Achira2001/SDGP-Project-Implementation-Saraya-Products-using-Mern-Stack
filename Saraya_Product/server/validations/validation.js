@@ -1,5 +1,7 @@
 import Joi from "joi";
 import passwordComplexity from "joi-password-complexity";
+const today = new Date();
+const eighteenYearsAgo = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
 
 const employeeValidation = (data) => {
   const complexityOptions = {
@@ -38,11 +40,11 @@ const employeeValidation = (data) => {
     city: Joi.string().required().label("City"),
     location: Joi.string().required().label("Location"),
     birthday: Joi.date()
-      .required()
-      .max("now")
-      .label("Birthday")
-      .min(new Date().getFullYear() - 20, "YYYY")
-      .label("Age"),
+    .required()
+    .max('now')
+    .message('Birthday cannot be in the future.')
+    .max(eighteenYearsAgo)
+    .message('You must be at least 18 years old.'),
     typeOfPosition: Joi.string().required().label("Type of Position"),
   });
 

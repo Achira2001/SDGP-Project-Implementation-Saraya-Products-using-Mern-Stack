@@ -16,7 +16,7 @@ export default function Profile() {
   const [productprice, setProductprice] = useState("");
   const [shopprice, setShopprice] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  const [img, setImg] = useState("");
+  const [img, setImg] = useState(null);
   const [file, setFile] = useState(null);
   const storage = getStorage();
 
@@ -64,9 +64,9 @@ export default function Profile() {
       setProductprice("");
       setShopprice("");
       setIsChecked(false);
-      setImg("");
+      setImg(null);
       setFile(null);
-      alert(response.data);
+      alert(response.data.message);
     } catch (error) {
       console.error("Error adding product:", error);
       alert(error.response.data.message);
@@ -170,7 +170,7 @@ export default function Profile() {
                   className="form-control"
                   onChange={(e) => setSize(e.target.value)}
                 >
-                  <option disabled selected>
+                  <option selected>
                     Choose...
                   </option>
                   <option value="15G">15 G</option>
@@ -246,6 +246,7 @@ export default function Profile() {
                 <div className="form-check">
                   <input
                     className="form-check-input"
+                    value={isChecked}
                     type="checkbox"
                     id="gridCheck1"
                     onChange={(e) => setIsChecked(e.target.value)}

@@ -44,7 +44,7 @@
     z-index: 1;
     left: 50%; /* This positions the left edge of the menu at the center of the parent */
     transform: translateX(-50%); /* This centers the menu horizontally with respect to the parent */
-    top: -280%; /* This positions the menu right below the dropdown button */
+    top: -120%; /* This positions the menu right below the dropdown button */
     min-width: 100px; /* Adjust the width as needed */
 }
 

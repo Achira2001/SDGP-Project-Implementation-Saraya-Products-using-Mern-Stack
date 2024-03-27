@@ -111,10 +111,10 @@ export default function Profile() {
       return;
     }
 
-    if (nic.length !== 11) {
-      alert("Please Enter 11 digits Nic Number");
-      return;
-    }
+    // if (nic.length !== 11) {
+    //   alert("Please Enter 11 digits Nic Number");
+    //   return;
+    // }
     if (phone1.length !== 10) {
       alert("Please Valid 10 digits Phone Number");
       return;
@@ -151,10 +151,10 @@ export default function Profile() {
       alert("Please Enter Position");
       return;
     }
-    if (!title) {
-      alert("Please Enter Title");
-      return;
-    }
+    // if (!title) {
+    //   alert("Please Enter Title");
+    //   return;
+    // }
 
     if (!isChecked) {
       alert("Comfirm the Documents");
@@ -189,7 +189,7 @@ export default function Profile() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                 >
-                  <option disabled selected>
+                  <option selected>
                     Choose...
                   </option>
                   <option value="Mr.">Mr.</option>
@@ -483,7 +483,7 @@ export default function Profile() {
                   className="form-control"
                   onChange={(e) => setPosition(e.target.value)}
                 >
-                  <option disabled selected>
+                  <option selected>
                     Choose...
                   </option>
                   <option value="Rider">Rider</option>

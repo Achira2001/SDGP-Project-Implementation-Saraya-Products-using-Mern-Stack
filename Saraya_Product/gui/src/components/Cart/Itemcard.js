@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
-import "./itemcard.css";
+import "./itemcard1.css";
 import axios from "axios";
 
 const ItemCard = (props) => {

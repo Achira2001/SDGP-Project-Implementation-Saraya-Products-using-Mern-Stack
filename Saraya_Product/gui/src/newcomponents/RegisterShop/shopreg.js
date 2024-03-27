@@ -126,10 +126,10 @@ export default function Profile() {
       alert("Please fill in the Owner name field.");
       return;
     }
-    if (shoptelephone.length !== 10) {
-      alert("Please Valid 10 digits Phone Number");
-      return;
-    }
+    // if (shoptelephone.length !== 10) {
+    //   alert("Please Valid 10 digits Phone Number");
+    //   return;
+    // }
     if (!shopno && !shopstreet && !shopcity) {
       alert("Please Enter Address");
       return;

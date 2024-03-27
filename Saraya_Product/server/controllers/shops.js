@@ -24,11 +24,17 @@ const addShopDetails = async (req, res) => {
     const ShopId = await ShopModel.findOne({
       shopId: req.body.shopId,
     });
-    const phoneNo = await ShopModel.findOne({ shopNo: req.body.shopNo });
+    const shopNo = await ShopModel.findOne({ shopNo: req.body.shopNo });
+    
+    const phoneNum = await ShopModel.findOne({ phoneNum: req.body.phoneNum });
     if (ShopId)
       return res.status(409).send({ message: "This shop id already Exist!" });
 
-    if (phoneNo)
+    if (shopNo)
+      return res
+        .status(409)
+        .send({ message: "This shop number already Exist!" });
+    if (phoneNum)
       return res
         .status(409)
         .send({ message: "This phone number already Exist!" });

@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("fuck");
+      console.log("Log");
       try {
         const response = await axios.get("http://localhost:5000/product");
         setData(response.data);
