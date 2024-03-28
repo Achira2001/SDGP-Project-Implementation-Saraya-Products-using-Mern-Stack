@@ -38,16 +38,16 @@ const Footer = () => {
                   Solution for easy and flexible getting meals for the
                   household.You can trust us anywhere through this platform
                 </p>
-                <p>
+                <p align="center">
                   &copy;2024 Made with <i className="bi bi-heart-fill"></i>{" "}
-                  by&nbsp;
+                  by
                   <a
                     href="https://github.com/Achira2001/SDGP-Project-Implementation.git"
                     target="_blank"
                     rel="noreferrer"
                     className={classes.eniola_codes}
-                  >
-                    SandinKodagoda
+                  ><br/>
+                    Sandin Kodagoda &
                     Achira Amarasena
                   </a>
                 </p>
